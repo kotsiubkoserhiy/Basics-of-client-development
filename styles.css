@@ -1,9 +1,4 @@
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+#main-heading {
   font-size: 24px;
   color: #333;
   font-weight: bold;
@@ -11,64 +6,71 @@ h6 {
   text-align: center;
 }
 
-body {
+.body-text {
   font-size: 16px;
+  color: #111;
+  line-height: 1.6;
+  text-align: justify; /* по ширині */
+  background-color: #f8f8f8;
+}
+
+.link {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.link:hover {
+  color: #0056b3 !important;
+}
+
+.class-ul {
+  list-style-type: disc;
+  margin-left: 30px;
+  padding-left: 0;
+  color: #666;
+  line-height: 1.6;
+  text-align: justify;
+  background-color: #f8f8f8;
+}
+
+.class-ol {
+  list-style-type: decimal;
+  margin-left: 40px;
+  padding-left: 0;
   color: #666;
   line-height: 1.6;
   text-align: justify; /* по ширині */
   background-color: #f8f8f8;
 }
 
-a {
-  color: #007bff;
-  text-decoration: none;
-}
-
-a:hover {
-  color: #0056b3;
-}
-
-p {
-  margin-bottom: 20px;
-}
-
-a {
-  font-weight: normal !important;
-}
-
-ul {
-  list-style-type: disc;
+.class-dl {
   margin-left: 20px;
   padding-left: 0;
 }
 
-ol {
-  list-style-type: decimal;
-  margin-left: 20px;
-  padding-left: 0;
-}
-
-dl {
-  margin-left: 20px;
-  padding-left: 0;
-}
-
-dt {
+.class-dt {
   font-weight: bold;
 }
 
-dd {
+.class-dd {
   margin-left: 20px;
 }
 
-table {
-  border: 1px solid #ddd;
-  padding: 8px;
-  margin-top: 16px;
-  background-color: #f5f5dc;
+p {
+  color: black !important;
 }
 
-td {
-  border: 1px solid #ddd;
-  padding: 8px;
+.custom-table {
+  border: 1px solid #000;
+  margin-top: 16px;
+  background-color: #f5f5dc;
+  color: #333;
+  width: 100%;
 }
+
+.custom-table-th,
+.custom-table-td {
+  border: 1px solid #000;
+  padding: 12px;
+}
+
