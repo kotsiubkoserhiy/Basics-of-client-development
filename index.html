@@ -6,18 +6,68 @@
     <title>Головна сторінка</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="./imgs/favicon.png" type="image/x-icon">
-     <link rel="shortcut icon" href="./imgs/favicon.png" type="image/x-icon">
-     <style>.link{color: red; text-decoration: none;}</style>
+    <link rel="shortcut icon" href="./imgs/favicon.png" type="image/x-icon">
+    <style>
+      .link{color: red; text-decoration: none;}
+      p>b {color: darkred;} /* дочірній селектор */
+      p>span{font-weight: bold;} /* дочірній селектор */
+
+      /* Псевдокласи для посилань */
+      a:link {
+        color: blue;
+        text-decoration: none;
+      }
+      a:visited {
+        color: purple;
+      }
+      a:hover {
+        color: red ;
+      }
+      a:active {
+        color: green ;
+      }
+
+      /* Псевдоклас :first-child */
+      p:first-child {
+        font-weight: bold;
+      }
+
+        /* Псевдоелементи :before і :after */
+      .menu .body-text:before {
+        content: "->";
+      }
+      .menu .body-text:after {
+        content: ".";
+      }
+
+      .menu{
+        float: left;
+      }
+    
+
+      /* Стилізація рядкового елементу <span> */
+      span.highlight {
+          background-color: yellow; /* Фон для виділення тексту */
+      }
+
+      /* Позиціонування */
+      .positioned {
+        position: static;
+      }
+
+    </style>
   </head>
   <body bgcolor="#F8F8FF">
-     <a href="./imgs/logo.png" target="_blank">
+    <div class="positioned">
+      <a href="./imgs/logo.png" target="_blank">
         <img src="./imgs/logo.png" alt="Логотип" width="400" height="150">
     </a>
+    </div>
     <font face="Arial" color="black" size="4" align="left">
     <h1 id="main-heading">Ласкаво просимо на головну сторінку</h1>
     <p style="color: blueviolet;" class="body-text">
-      Вітаємо вас у <em>ТехноДомі</em> - вашому надійному партнері у світі побутової
-      техніки. Ми пропонуємо широкий вибір високоякісної техніки для вашого дому
+      Вітаємо вас у <span class="highlight"><em>ТехноДомі</em></span> - вашому надійному партнері у світі побутової
+      техніки. Ми пропонуємо широкий вибір <span class="highlight">високоякісної техніки</span> для вашого дому
       за доступними цінами
     </p>
     <p class="body-text">
@@ -36,34 +86,38 @@
       Не зволікайте, завітайте до нас сьогодні та переконайтеся у великому
       асортименті та відмінному обслуговуванні, які можемо вам запропонувати.
     </p>
-    <p class="body-text">
-      <b>Поточна сторінка:</b>
-      <a href="#current_page" class="link"
-        >Перехід на поточну сторінку</a
-      >
-    </p>
-    <p class="body-text">
-      <b>Доставка та оплата:</b>
-      <a href="delivery_payment.html#delivery_payment_info" class="link"
-        >Перехід на сторінку "Доставка та оплата"
-      </a>
-    </p>
-    <p class="body-text">
-      <b>Гарантія та сервіс:</b>
-      <a href="warranty_service.html" class="link"
-        >Перехід на сторінку "Гарантія та сервіс"</a
-      >
-    </p>
-    <p class="body-text">
-      <b>Контакти:</b>
-      <a href="contacts.html" class="link"
-        >Перехід на сторінку "Контакти"</a
-      >
-    </p>
-    <p class="body-text">
-      <b>Посилання на Google:</b>
-      <a href="https://www.google.com" class="link" >Перехід на Google</a>
-    </p>
+    <div class="menu">
+        <p class="body-text">
+        <b>Поточна сторінка:</b>
+        <a href="#current_page" class="link"
+          >Перехід на поточну сторінку</a
+        >
+      </p>
+      <p class="body-text">
+        <b>Доставка та оплата:</b>
+        <a href="delivery_payment.html#delivery_payment_info" class="link"
+          >Перехід на сторінку "Доставка та оплата"
+        </a>
+      </p>
+      <p class="body-text">
+        <b>Гарантія та сервіс:</b>
+        <a href="warranty_service.html" class="link"
+          >Перехід на сторінку "Гарантія та сервіс"</a
+        >
+      </p>
+      <p class="body-text">
+        <b>Контакти:</b>
+        <a href="contacts.html" class="link"
+          >Перехід на сторінку "Контакти"</a
+        >
+      </p>
+      <p class="body-text">
+        <b>Посилання на Google:</b>
+        <a href="https://www.google.com" class="link" >Перехід на Google</a>
+      </p>
+    </div>
+      <!-- Плаваючий блок -->
+    <div class="float-left">
     <table class="custom-table" cellspacing="0" cellpadding="5" width="100%" align="center"> <caption> <strong><font size="5">Найкращі пропозиції</font></strong></caption >
        <thead>
         <tr bgcolor="#F5F5DC">

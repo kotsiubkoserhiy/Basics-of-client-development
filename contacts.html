@@ -5,7 +5,12 @@
     <meta name="author" content="Коцюбко Сергій" />
     <title>Контакти</title>
     <link rel="stylesheet" href="styles.css">
-    <style>.link{color: red; text-decoration: none;}</style>
+    <style>  
+      dl dt{color: red; text-decoration: none;} /* Контекстний селектор */
+      dl dd {color:rgb(132, 62, 62); text-decoration: none;} /* Контекстний селектор */
+      b+i {text-decoration: underline;} /*Сусідній селектор*/
+      b+em {text-decoration: underline;} /*Сусідній селектор*/
+    </style>
   </head>
   <body bgcolor="#F8F8FF"> <!--GhostWhite-->
     <font face="Arial" color="black" size="4" align="left">
@@ -14,8 +19,8 @@
       Зв'яжіться з нами за наступними контактними даними для отримання
       додаткової інформації або консультації:
     </p>
-    <p class="body-text">Email: technodim@gmail.com</p>
-    <p class="body-text">Телефон: +380932516743</p>
+    <p class="body-text"><b>Email: </b><i>technodim@gmail.com</i></p>
+    <p class="body-text"><b>Телефон: </b><i>+380932516743</i></p>
     <dl class="class-dl">
       <dt class="class-dt">В неробочий час замовлення можна оформити в автоматичному режимі</dt>
       <dd class="class-dd">Натисніть кнопку Купити, тим самим додавши товари до кошику, після чого
@@ -24,7 +29,7 @@
       <dd class="class-dd">Послуга "Зворотній дзвінок" . Ваше запитання буде оброблений в порядку черги і менеджер Вам передзвонить.</dd>
     </dl>
     
-    <p class="body-text">Адреса офлайн магазина: вул.Хрещатик, 29, м.Київ, Україна</p>
+    <p class="body-text"> <b>Адреса офлайн магазина: </b><em>вул.Хрещатик, 29, м.Київ, Україна</em></p>
     <iframe src="./imgs/Khreschatyk_29.png" name="Address" style="width:500px; height:300px; margin-right:15px;"></iframe>
     <p class="body-text"><a href="https://maps.app.goo.gl/9EQYpirVGaQthjALA">Khreschatyk 29</a></p>
     <p class="body-text">
