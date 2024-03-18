@@ -73,3 +73,11 @@ p {
   border: 1px solid #000;
   padding: 12px;
 }
+
+.Instagram_link {
+  padding: 15px;
+  border: 1px solid #d6e9c6;
+  border-radius: 4px;
+  color: #5509d9;
+  background-color: #ae9387;
+}

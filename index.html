@@ -7,10 +7,11 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="./imgs/favicon.png" type="image/x-icon">
     <link rel="shortcut icon" href="./imgs/favicon.png" type="image/x-icon">
+    <script src="scripts/scripts_lab6.js"></script>
     <style>
       .link{color: red; text-decoration: none;}
-      p>b {color: darkred;} /* дочірній селектор */
-      p>span{font-weight: bold;} /* дочірній селектор */
+      /* p>b {color: darkred;} дочірній селектор */
+      /* p>span{font-weight: bold;} дочірній селектор */
 
       /* Псевдокласи для посилань */
       a:link {
@@ -27,10 +28,10 @@
         color: green ;
       }
 
-      /* Псевдоклас :first-child */
+      /* Псевдоклас :first-child
       p:first-child {
         font-weight: bold;
-      }
+      } */
 
         /* Псевдоелементи :before і :after */
       .menu .body-text:before {
@@ -58,18 +59,31 @@
     </style>
   </head>
   <body bgcolor="#F8F8FF">
-    <div class="positioned">
+    Фон
+      <button onclick="changeBackground()">Змінити фон</button>
+    <!-- <script> 
+      alert("Вітаємо на нашому сайті!");
+      let age = prompt('Скільки вам років' , 18);
+      alert (`you ${age} years old`);
+      let confirm_age = confirm('Ви підтверджуєте ваш вік?')
+      alert (confirm_age)
+    </script>  -->
+
+    <div id="positioned">
+      <p>Логотип</p>
+      <p>Компанії</p>
       <a href="./imgs/logo.png" target="_blank">
         <img src="./imgs/logo.png" alt="Логотип" width="400" height="150">
     </a>
     </div>
     <font face="Arial" color="black" size="4" align="left">
     <h1 id="main-heading">Ласкаво просимо на головну сторінку</h1>
+    <script>alert(positioned.textContent)</script>
     <p style="color: blueviolet;" class="body-text">
       Вітаємо вас у <span class="highlight"><em>ТехноДомі</em></span> - вашому надійному партнері у світі побутової
       техніки. Ми пропонуємо широкий вибір <span class="highlight">високоякісної техніки</span> для вашого дому
       за доступними цінами
-    </p>
+    </p> 
     <p class="body-text">
       Наш асортимент включає в себе все необхідне для вашого комфорту та
       зручності: від телевізорів до пральних машин, плит,
@@ -86,39 +100,42 @@
       Не зволікайте, завітайте до нас сьогодні та переконайтеся у великому
       асортименті та відмінному обслуговуванні, які можемо вам запропонувати.
     </p>
+    <script> 
+      let text = document.body.firstChild
+      alert(text.data)
+    </script>
+    <p><button id="start-dialog">Розпочати діалог з нами</button></p>
+    <script>
+        document.getElementById('start-dialog').addEventListener('click', showDialog);
+    </script>
     <div class="menu">
         <p class="body-text">
-        <b>Поточна сторінка:</b>
         <a href="#current_page" class="link"
-          >Перехід на поточну сторінку</a
-        >
+          >Поточна сторінка</a>
       </p>
       <p class="body-text">
-        <b>Доставка та оплата:</b>
         <a href="delivery_payment.html#delivery_payment_info" class="link"
-          >Перехід на сторінку "Доставка та оплата"
-        </a>
+          >Доставка та оплата</a> 
       </p>
       <p class="body-text">
-        <b>Гарантія та сервіс:</b>
         <a href="warranty_service.html" class="link"
-          >Перехід на сторінку "Гарантія та сервіс"</a
+          >Гарантія та сервіс</a
         >
       </p>
       <p class="body-text">
-        <b>Контакти:</b>
         <a href="contacts.html" class="link"
-          >Перехід на сторінку "Контакти"</a
+          >Контакти</a
         >
       </p>
       <p class="body-text">
-        <b>Посилання на Google:</b>
-        <a href="https://www.google.com" class="link" >Перехід на Google</a>
+        <a href="https://www.google.com" class="link" >Google</a>
       </p>
+      <button onclick="compareStrings('Контакти', 'Google')">Порівняти два попердніх рядки</button>
     </div>
       <!-- Плаваючий блок -->
     <div class="float-left">
-    <table class="custom-table" cellspacing="0" cellpadding="5" width="100%" align="center"> <caption> <strong><font size="5">Найкращі пропозиції</font></strong></caption >
+      
+    <table class="custom-table" cellspacing="0" cellpadding="5" width="100%" align="center" id="table1"> <caption> <strong><font size="5">Найкращі пропозиції</font></strong></caption >
        <thead>
         <tr bgcolor="#F5F5DC">
             <th class="custom-table-th" align="center" width="33.33%">Робот-пилосос RoboRock S7 Max Ultra Black</th>
@@ -175,5 +192,6 @@
         </tr>
         </tbody>
     </table>
+     <p><button onclick="owner_of_site('Сергій', 'Коцюбко')">Відомість про власника сайта</button></p>
   </body>
 </html>
