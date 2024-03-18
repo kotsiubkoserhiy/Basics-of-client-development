@@ -6,15 +6,22 @@
     <title>Гарантія та сервіс</title>
     <link rel="stylesheet" href="styles.css">
     <style>.link{color: red; text-decoration: none;}</style>
+    <script src="scripts/scripts_lab6.js"></script>
   </head>
   <body bgcolor="#F8F8FF">
+    <div id="menu">
+      <button class="menu-item" data-action="home">Домашня сторінка</button>
+      <button class="menu-item" data-action="warranty_service">Гарантія та сервіс</button>
+      <button class="menu-item" data-action="delivery_payment">Доставка та оплата</button>
+      <button class="menu-item" data-action="contacts">Контакти</button>
+    </div>
     <font face="Arial" color="black" size="4" align="left">
     <h1 id="main-heading">Інформація про гарантію та сервісне обслуговування</h1>
     <p class="body-text">
       Ми гарантуємо якість наших товарів і надаємо гарантійні відомості для
       кожного продукту.
     </p>
-    <ul class="class-ul">
+    <ul class="class-ul" id="list">
       <li >Надання будь-яких додаткових термінів безкоштовного обслуговування повинно
       бути підтверджено спеціальними документами. Простежте, щоб талон був _
       правильно заповнений і мав штамп торгує організаціі "Інтернет магазин
@@ -52,9 +59,36 @@
         т.п.).</li>
     </ol>
     </p>
-    <p class="body-text">
-      Посилання на головну сторінку
-      <a href="index.html" class="link">Перехід на головну сторінку</a>
-    </p>
+    <input type="button" value="Instagram" onclick="alert('@texnodim')">
+    <input id="facebook" type="button" value="Facebook">
+     <script>
+      facebook.onclick = function() {
+        alert('texnodim_facebook');
+      };  
+      </script>
+
+    <input type="button" value="Наші партнери" onclick="our_partners()">
+    </script>
+    <input id="owner" type="button" value="Власник сайта">
+    <script>
+      owner.onclick = () => alert("Захищено!");
+      owner.addEventListener("click", owner_site);
+      owner.addEventListener("click", owner_contacts);
+      owner.removeEventListener("click", owner_site)
+      owner.addEventListener("click", ownerEventHandler);
+    </script> 
+    <script>
+      // Додаємо обробник подій для списку
+    document.getElementById("list").onclick = function(event) {
+      let target = event.target;
+      while (target != this) {
+        if (target.tagName == 'LI') {
+          target.classList.toggle('highlight');
+          return;
+        }
+        target = target.parentNode;
+      }
+    };
+    </script>
   </body>
 </html>

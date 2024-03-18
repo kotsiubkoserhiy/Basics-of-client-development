@@ -81,3 +81,34 @@ p {
   color: #5509d9;
   background-color: #ae9387;
 }
+
+/* Стилізація контейнера меню */
+#menu {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Відстань між кнопками */
+  padding: 20px;
+}
+
+/* Стилізація кнопок меню */
+.menu-item {
+  background-color: #d2b48c;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px; /* Закруглені кути */
+  transition: background-color 0.3s, transform 0.2s; /* Плавна анімація для кольору та натискання */
+}
+
+/* Стилізація кнопок меню при наведенні */
+.menu-item:hover {
+  background-color: #b8860b;
+  transform: scale(1.05); /* Збільшення кнопки */
+}
+
+/* Стилізація кнопок меню при натисканні */
+.menu-item:active {
+  background-color: #d2b48c;
+  transform: scale(0.95); /* Зменшення кнопки при натисканні */
+}

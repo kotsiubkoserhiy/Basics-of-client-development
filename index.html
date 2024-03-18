@@ -34,14 +34,14 @@
       } */
 
         /* Псевдоелементи :before і :after */
-      .menu .body-text:before {
+      .menu_first .body-text:before {
         content: "->";
       }
-      .menu .body-text:after {
+      /* .menu .body-text:after {
         content: ".";
-      }
+      } */
 
-      .menu{
+      .menu_first{
         float: left;
       }
     
@@ -59,6 +59,12 @@
     </style>
   </head>
   <body bgcolor="#F8F8FF">
+    <div id="menu">
+      <button class="menu-item" data-action="home">Домашня сторінка</button>
+      <button class="menu-item" data-action="warranty_service">Гарантія та сервіс</button>
+      <button class="menu-item" data-action="delivery_payment">Доставка та оплата</button>
+      <button class="menu-item" data-action="contacts">Контакти</button>
+    </div>
     Фон
       <button onclick="changeBackground()">Змінити фон</button>
     <!-- <script> 
@@ -76,6 +82,7 @@
         <img src="./imgs/logo.png" alt="Логотип" width="400" height="150">
     </a>
     </div>
+    
     <font face="Arial" color="black" size="4" align="left">
     <h1 id="main-heading">Ласкаво просимо на головну сторінку</h1>
     <script>alert(positioned.textContent)</script>
@@ -108,28 +115,9 @@
     <script>
         document.getElementById('start-dialog').addEventListener('click', showDialog);
     </script>
-    <div class="menu">
-        <p class="body-text">
-        <a href="#current_page" class="link"
-          >Поточна сторінка</a>
-      </p>
-      <p class="body-text">
-        <a href="delivery_payment.html#delivery_payment_info" class="link"
-          >Доставка та оплата</a> 
-      </p>
-      <p class="body-text">
-        <a href="warranty_service.html" class="link"
-          >Гарантія та сервіс</a
-        >
-      </p>
-      <p class="body-text">
-        <a href="contacts.html" class="link"
-          >Контакти</a
-        >
-      </p>
-      <p class="body-text">
-        <a href="https://www.google.com" class="link" >Google</a>
-      </p>
+    <div class="menu_first">
+      <p class="body-text">Контакти</p>
+      <p class="body-text">Google</p>
       <button onclick="compareStrings('Контакти', 'Google')">Порівняти два попердніх рядки</button>
     </div>
       <!-- Плаваючий блок -->

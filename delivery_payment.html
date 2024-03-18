@@ -5,12 +5,18 @@
   <meta name="author" content="Коцюбко Сергій" />
   <title>Доставка та оплата</title>
   <link rel="stylesheet" href="styles.css">
+  <script src="scripts/scripts_lab6.js"></script>
   <style>
     .link{color: red; text-decoration: none;}
   </style>
 </head>
 <body bgcolor="#F8F8FF">
-
+<div id="menu">
+      <button class="menu-item" data-action="home">Домашня сторінка</button>
+      <button class="menu-item" data-action="warranty_service">Гарантія та сервіс</button>
+      <button class="menu-item" data-action="delivery_payment">Доставка та оплата</button>
+      <button class="menu-item" data-action="contacts">Контакти</button>
+    </div>
 <font face="Arial" color="black" size="4" align="left">
 <h1 id="main-heading">Інформація про доставку та оплату</h1>
 <a href="./imgs/dostavka.png" target="_blank">
@@ -73,11 +79,6 @@
     <li > Приват24.</li>
   </ul> 
 </p>
-<p class="body-text">
-  Посилання на головну сторінку
-  <a href="index.html" class="link">Перехід на головну сторінку</a>
-</p>
-
 <script>
   let div = document.createElement('div');
   div.className = "Instagram_link";
