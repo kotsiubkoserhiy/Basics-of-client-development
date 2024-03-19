@@ -112,3 +112,26 @@ p {
   background-color: #d2b48c;
   transform: scale(0.95); /* Зменшення кнопки при натисканні */
 }
+
+#gameArea {
+  width: 600px;
+  height: 400px;
+  background-color: #cccccc;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+}
+#message {
+  margin-top: 20px;
+}
+.draggable {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  background-color: #76a9fa;
+  border-radius: 50%;
+  cursor: pointer;
+  /* Початкове розташування */
+  top: 175px;
+  left: 275px;
+}
