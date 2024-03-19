@@ -107,5 +107,85 @@ document.addEventListener('DOMContentLoaded', function() {
     new Menu(document.getElementById('menu'));
 });
 
+// lab8
+document.addEventListener('DOMContentLoaded', () => {
+    // Отримання посилання на елементи DOM
+    const gameArea = document.getElementById('gameArea');
+    const message = document.getElementById('message');
+    const draggable = document.querySelector('.draggable');
+    let isDragging = false;
+    let offsetX, offsetY;
 
+  let treasure = {
+      // Випадкове розташування скарбу при завантаженні гри
+      x: Math.floor(Math.random() * gameArea.clientWidth),
+      y: Math.floor(Math.random() * gameArea.clientHeight)
+    };
+    // Обробник події миші при натисканні на перетяжний об'єкт
+    draggable.addEventListener('mousedown', (event) => {
+      isDragging = true;
+      // Обчислення відстані між курсором миші та верхнім лівим кутом об'єкта
+      offsetX = event.clientX - draggable.getBoundingClientRect().left;
+      offsetY = event.clientY - draggable.getBoundingClientRect().top;
+      draggable.style.backgroundColor = '#6789FA'; // Change color when grabbed
+      
+      // Перевірка наявності скарбу під час перетягування об'єкта
+      checkForTreasure(event.clientX - gameArea.getBoundingClientRect().left, event.clientY - gameArea.getBoundingClientRect().top);
+    });
+    
+    // Обробник події миші при відпусканні кнопки миші
+    document.addEventListener('mouseup', () => {
+      isDragging = false;
+      draggable.style.backgroundColor = '#76A9FA'; // Restore initial color
+    });
 
+    // Обробник події руху миші в межах ігрової області
+    gameArea.addEventListener('mousemove', (event) => {
+      if (isDragging) {
+        const gameAreaRect = gameArea.getBoundingClientRect();
+        const x = event.clientX - offsetX - gameAreaRect.left;
+        const y = event.clientY - offsetY - gameAreaRect.top;
+
+        // Обмеження руху об'єкта в межах ігрової області
+        const newLeft = Math.min(gameArea.clientWidth - draggable.offsetWidth, Math.max(0, x));
+        const newTop = Math.min(gameArea.clientHeight - draggable.offsetHeight, Math.max(0, y));
+
+        draggable.style.left = `${newLeft}px`;
+        draggable.style.top = `${newTop}px`;
+
+        checkForTreasure(newLeft, newTop);
+      }
+    });
+
+    // Функція для перевірки відстані до скарбу
+    function checkForTreasure(x, y) {
+      const distance = Math.sqrt(Math.pow(x - treasure.x, 2) + Math.pow(y - treasure.y, 2));
+      if (distance < 20) {
+        message.innerHTML = "Вітаємо! Ви знайшли скарб!";
+        gameArea.style.backgroundColor = 'gold';
+        setTimeout(resetGame, 6000); 
+      } else if (distance < 50) {
+          message.innerHTML = "Дуже, дужееее гаряче!";
+      } else if (distance < 100) {
+        message.innerHTML = "Дуже гаряче!";
+      } else if (distance < 180) {
+        message.innerHTML = "Гаряче";
+      } else if (distance < 260) {
+        message.innerHTML = "Тепло";
+      } else {
+        message.innerHTML = "Холодно";
+      }
+    }
+    
+    // Функція для перезавантаження гри
+    function resetGame() {
+      draggable.style.left = '50%';
+      draggable.style.top = '50%';
+      treasure = {
+        x: Math.floor(Math.random() * gameArea.clientWidth),
+        y: Math.floor(Math.random() * gameArea.clientHeight)
+      };
+      message.innerHTML = "Перетягніть кружок, щоб розпочати знову";
+      gameArea.style.backgroundColor = '#f0f0f0';
+    }
+  });
